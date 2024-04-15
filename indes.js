@@ -12,7 +12,7 @@ for (let i = 1; i <= 100; i++){
   }
   
   // Prime numbers
-  
+
   /*/*Declare an arbitrary number, n.
 Create a loop that searches for the next prime number, 
 starting at n and incrementing from there.
@@ -21,6 +21,7 @@ log that number and exit the loop. */
 
   //For loop:
 
+  /*
 let n = 89;
 let i;
 let prime;
@@ -39,3 +40,29 @@ for (i=n+1; true; i++)
         break;
     }
 }
+
+*/
+
+// While Loop
+
+let n = 89
+let foundPrime = false
+let i = n + 1
+let nextPrime;
+
+outerLoop: while (!foundPrime) {
+
+  for (let j = 2; j < i; j++){
+    if (i % j === 0){
+      // this is not a prime number, because it was divisible
+      i++
+      continue outerLoop
+    }
+  }
+  // If I get to this line of the while loop, you have found a prime number
+
+  nextPrime = i 
+  foundPrime = true 
+}
+
+console.log(nextPrime)
