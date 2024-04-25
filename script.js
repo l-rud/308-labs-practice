@@ -158,3 +158,37 @@ for (let i = 0; i < csvStr.length; i++) {
   }
 
 }
+
+
+//Transform an array of objects into CSV string:
+
+
+arrOfObjects = [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" }, 
+                { id: "48", name: "Barry", occupation: "Runner", age: "25" }, 
+                { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" }, 
+                { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" }, 
+                { id: "7", name: "Bilbo", occupation: "None", age: "111" }];
+
+console.log(arrOfObjects);
+
+// Define our column headers and extract the key-value pairs into their own arrays:
+let csv = Object.keys(arrOfObjects[0]).map(function(k){return k}).join(",") + '\n';
+
+// transform arrOfObjects to CSV
+csv += arrOfObjects.map(obj => Object.keys(obj).map(function(k){return obj[k]}).join(",")).join("\n");
+
+console.log(csv)
+
+//Find all prime numbers in an array
+const array = [-12, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+function isPrime(a) {
+  for (let i = 2; a > i; i++) {
+    if (a % i === 0) {
+      return false;
+    }
+  }
+  return a > 1;
+}
+
+console.log(array.filter(isPrime)); 
